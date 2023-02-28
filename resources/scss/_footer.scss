@@ -1,0 +1,101 @@
+footer {
+    min-height: calc(100vh - 400px);
+
+    .footer-top {
+        min-height: calc(100% - 100px);
+        background-image: url('../img/footer-bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 50px;
+        position: relative;
+
+        img {
+            clip-path: inset(60px 0px 60px 0px);
+            top: -111px;
+            position: absolute;
+        }
+
+        .footer-row {
+            display: flex;
+        }
+
+        .footer-col {
+            flex-basis: 200px;
+
+            h4 {
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                color: white;
+                font-size: 20px;
+            }
+
+            ul {
+                list-style-type: none;
+                margin-bottom: 10px;
+
+                a {
+                    color: grey;
+
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        height: 100px;
+        background-color: #303030;
+
+        nav {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                padding: 10px;
+                background-color: transparent;
+                border: 2px solid #0082f9;
+                color: white;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #0082f9;
+                }
+            }
+
+            .right-nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            span {
+                font-size: 20px;
+                color: #0082f9;
+                text-transform: uppercase;
+            }
+
+            ul {
+                display: flex;
+                gap: 20px;
+                list-style-type: none;
+
+                a:hover {
+                    filter: brightness(150%)
+                }
+            }
+        }
+    }
+
+}
+
+
+a img{
+
+    width:px;
+    height: auto;
+}
