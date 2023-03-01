@@ -20,7 +20,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -28,7 +28,41 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+
+            'title' => 'required|string|unique:comics',
+            'description' => 'nullable|string',
+            'thumb' => 'nullable|url',
+            'price' => 'required|numeric',
+            'series' => 'required|string',
+            'sale_date' => 'required|date',
+            'type' => 'required|string',
+            'artists' => 'required|string',
+            'writers' => 'required|string',
+        ], [
+
+            'title.required' => 'Il campo è obbligatorio',
+            'title.unique' => 'Il campo è già presente',
+            'thumb.url' => 'Inserire indirizzo valido',
+            'price.required' => 'Il campo è obbligatorio',
+            'price.numeric' => 'Il campo deve essere un numero',
+            'series.required' => 'Il campo è obbligatorio',
+            'sale_data.required' => 'Il campo è obbligatorio',
+            'type.required' => 'Il campo è obbligatorio',
+            'artist.required' => 'Il campo è obbligatorio',
+            'writers.required' => 'Il campo è obbligatorio',
+        
+        ]);
+
+
+        $data = $request->all();
+        $comic = new Comic();
+
+        $comic->fill($data);
+        $comic->save();
+
+        return to_route('comics.show', $comic->id);
     }
 
     /**

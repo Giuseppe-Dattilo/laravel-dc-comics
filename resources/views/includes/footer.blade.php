@@ -2,7 +2,7 @@
     <!-- Footer top -->
     <nav class="footer-top">
         <div class="container">
-            <div class="footer-row">
+            {{-- <div class="footer-row">
                 <div class="footer-col">
                     <ul>
                         <h4>DC COMICS</h4>
@@ -46,7 +46,7 @@
                         <li><a href="#">DC Power Visa</a></li>
                     </ul>
                 </div>
-                <div>
+                <div> --}}
                     <img src="{{ Vite::asset('resources/img/dc-logo-bg.png')}}" alt="logo-dc">
                 </div>
             </div>

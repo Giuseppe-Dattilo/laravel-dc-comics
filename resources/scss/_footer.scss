@@ -1,8 +1,8 @@
 footer {
-    min-height: calc(100vh - 400px);
+    height: 600px;
 
     .footer-top {
-        min-height: calc(100% - 100px);
+        height:390px;
         background-image: url('../img/footer-bg.jpg');
         background-size: cover;
         background-repeat: no-repeat;
@@ -10,7 +10,7 @@ footer {
         position: relative;
 
         img {
-            clip-path: inset(60px 0px 60px 0px);
+            clip-path: inset(110px 0px 60px 0px);
             top: -111px;
             position: absolute;
         }

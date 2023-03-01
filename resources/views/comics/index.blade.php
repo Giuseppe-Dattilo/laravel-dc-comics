@@ -6,17 +6,17 @@
     <section id="comics">
         <div class="comics-top">
             <div class="container">
-                <h4>CURRENT SERIES</h4>
-                <div>
+                <h4 class="text-center">CURRENT SERIES</h4>
+                <div class="d-flex mx-5 card-container">
                     @foreach ($comics as $comic)
-                        <div class="card">
-                            <img src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
+                        <div class="card d-flex my-3">
+                            <img class="img-fluid" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
                             <h5> {{ $comic->series }}</h5>
                         </div>      
                     @endforeach
                  </div>
-                <div class="comics-button">
-                    <button>LOAD MORE</button>
+                <div class="text-center">
+                    <a href="{{ route ('comics.create') }}"><button>LOAD MORE</button></a>
                 </div>
             </div>
         </div>
