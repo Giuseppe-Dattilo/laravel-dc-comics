@@ -3,20 +3,23 @@
 @section ('title', 'Comics')
 
 @section ('main-content')
+
     <section id="comics">
         <div class="comics-top">
             <div class="container">
-                <h4 class="text-center">CURRENT SERIES</h4>
+                <h4 class="text-center fw-bold">CURRENT SERIES</h4>
                 <div class="d-flex mx-5 card-container">
                     @foreach ($comics as $comic)
-                        <div class="card d-flex my-3">
-                            <img class="img-fluid" src="{{ $comic->thumb }}" alt="{{ $comic->title }}">
-                            <h5> {{ $comic->series }}</h5>
+                        <div class="card d-flex my-3 flex-column justify-content-between align-items-center">
+                            <img class="img-fluid" src="{{ $comic->thumb }}" alt="{{ $comic->title }}" >
+                            <h5 class="fw-bold"> {{ $comic->series }}</h5>
+                            <a href="{{ route ('comics.show', $comic->id) }}" class="btn btn-small btn-primary">Vedi</a>
                         </div>      
                     @endforeach
                  </div>
                 <div class="text-center">
-                    <a href="{{ route ('comics.create') }}"><button>LOAD MORE</button></a>
+                    
+                    <a href="{{ route ('comics.create') }}"><button>Crea</button></a>
                 </div>
             </div>
         </div>
